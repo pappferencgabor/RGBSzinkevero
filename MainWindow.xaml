@@ -1,0 +1,160 @@
+﻿<Window x:Class="RGB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RGB"
+        mc:Ignorable="d"
+        Icon="https://png2.cleanpng.com/sh/8c7f890d7881b8a874e43011988f060f/L0KzQYm3VcE1N5pqfZH0aYP2gLBuTfNwdJD3RelxZXXvPbT2jP9zNaRogNd2ZT3mf773jPVubZ95eeRELXPyfLF5k71kd510RadqZnG1coO9Vcc0amk5RqsAM0i5SIe6UcUzPmQ5TKYDNkO4R4S1kP5o/kisspng-color-wheel-color-scheme-complementary-colors-colo-5afa2b26573b84.9538686315263444863573.png"
+        Title="RGB színkeverő" Height="600" Width="700" Background="DimGray">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition MinHeight="30" MaxHeight="60" Height="30"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Label 
+            Content="Piros" 
+            FontSize="30" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center"/>
+        <Slider
+            x:Name="sliPiros"
+            Minimum="0"
+            Maximum="255"
+            Width="200"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Grid.Column="1" 
+            ValueChanged="sliPiros_ValueChanged"/>
+        <Label
+            x:Name="txtPiros"
+            Content="0"
+            FontSize="30"
+            Grid.Column="2"
+            Grid.Row="0"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center"/>
+
+
+        <Label 
+            Content="Zöld" 
+            FontSize="30" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center"
+            Grid.Row="1"/>
+        <Slider
+            x:Name="sliZold"
+            Minimum="0"
+            Maximum="255"
+            Width="200"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Grid.Column="1"
+            Grid.Row="1" 
+            ValueChanged="sliZold_ValueChanged"/>
+        <Label
+            x:Name="txtZold"
+            Content="0"
+            FontSize="30"
+            Grid.Column="2"
+            Grid.Row="1"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center"/>
+
+
+        <Label 
+            Content="Kék" 
+            FontSize="30" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center"
+            Grid.Row="2"/>
+        <Slider
+            x:Name="sliKek"
+            Minimum="0"
+            Maximum="255"
+            Width="200"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Grid.Column="1"
+            Grid.Row="2"
+            ValueChanged="sliKek_ValueChanged"/>
+        <Label
+            x:Name="txtKek"
+            Content="0"
+            FontSize="30"
+            Grid.Column="2"
+            Grid.Row="2"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button
+                x:Name="btnRogzit"
+                Content="Rögzít" 
+                Click="btnRogzit_Click"
+                Margin="5 0 5 0"/>
+            <Button
+                x:Name="btnTorol"
+                Content="Töröl"
+                Grid.Column="1" 
+                Click="btnTorol_Click"
+                Margin="5 0 5 0"/>
+            <Button
+                x:Name="btnUrit"
+                Content="Ürítés"
+                Grid.Column="2" 
+                Click="btnUrit_Click"
+                Margin="5 0 5 0"/>
+        </Grid>
+
+        <ListBox
+            x:Name="lbSzinek"
+            Grid.Row="4"
+            Grid.ColumnSpan="3"
+            Margin="5" 
+            SelectionChanged="lbSzinek_SelectionChanged"/>
+
+
+        <Rectangle
+            x:Name="eredmeny"
+            Grid.Row="5"
+            Grid.ColumnSpan="2"
+            Margin="5 0 0 5"
+            Fill="Black"/>
+        <Label
+            x:Name="eredmenyRGB"
+            FontSize="20"
+            Content="rgb(0, 0, 0)"
+            HorizontalAlignment="Center"
+            Grid.Row="5"
+            Grid.Column="2"
+            Margin="0,25,0,60" 
+            MouseLeftButtonDown="eredmenyRGB_MouseLeftButtonDown" 
+            MouseEnter="eredmenyRGB_MouseEnter"/>
+        <Label
+            x:Name="eredmenyHex"
+            Content="#000000"
+            FontSize="20"
+            HorizontalAlignment="Center"
+            Grid.Row="5"
+            Grid.Column="2" 
+            Margin="0,60,0,25" 
+            MouseLeftButtonDown="eredmenyHex_MouseLeftButtonDown" MouseEnter="eredmenyHex_MouseEnter"/>
+    </Grid>
+</Window>
