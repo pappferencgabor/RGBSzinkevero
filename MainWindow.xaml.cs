@@ -117,7 +117,6 @@ namespace RGB
                 sliZold.Value = byte.Parse(tagok[1]);
                 sliKek.Value = byte.Parse(tagok[2]);
             }
-            
         }
 
         private void eredmenyHex_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -131,6 +130,7 @@ namespace RGB
             // google segítség
             Clipboard.SetText(eredmenyRGB.Content.ToString());
         }
+
 
         private void eredmenyRGB_MouseEnter(object sender, MouseEventArgs e)
         {

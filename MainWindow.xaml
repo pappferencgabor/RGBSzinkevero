@@ -97,8 +97,8 @@
             VerticalAlignment="Center"
             HorizontalAlignment="Center"/>
 
-        <Grid Grid.Row="3"
-              Grid.ColumnSpan="3">
+        
+        <Grid Grid.Row="3" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -123,6 +123,7 @@
                 Margin="5 0 5 0"/>
         </Grid>
 
+        
         <ListBox
             x:Name="lbSzinek"
             Grid.Row="4"
@@ -149,12 +150,13 @@
             MouseEnter="eredmenyRGB_MouseEnter"/>
         <Label
             x:Name="eredmenyHex"
-            Content="#000000"
             FontSize="20"
+            Content="#000000"
             HorizontalAlignment="Center"
             Grid.Row="5"
             Grid.Column="2" 
             Margin="0,60,0,25" 
-            MouseLeftButtonDown="eredmenyHex_MouseLeftButtonDown" MouseEnter="eredmenyHex_MouseEnter"/>
+            MouseLeftButtonDown="eredmenyHex_MouseLeftButtonDown"
+            MouseEnter="eredmenyHex_MouseEnter"/>
     </Grid>
 </Window>
